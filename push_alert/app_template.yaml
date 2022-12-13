@@ -1,0 +1,6 @@
+runtime: python39
+handlers:
+- url: /.*
+  script: auto
+env_variables:
+  PUBSUB_VERIFICATION_TOKEN: "123token"
