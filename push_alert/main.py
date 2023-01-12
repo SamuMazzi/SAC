@@ -26,7 +26,7 @@ def pubsub_push():
     save_to_db(json.loads(base64_msg))
     return 'OK', 200
 
-if __name == '__main__':
+if __name__ == '__main__':
     app.run(host='localhost', post=8080, debug=True)
 
 # gcloud app deploy

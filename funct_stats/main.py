@@ -8,6 +8,7 @@ db = firestore.Client()
 def get_docname():
     dt=datetime.datetime.now()
     docname=dt.strftime('%Y%m%d')
+    return docname
 
 def get_stats(v):
     return {
@@ -20,4 +21,11 @@ def get_stats(v):
 
 def get_data(data):
     doc=data['value']
-    v=[float() for k in doc['fields'`.keys()]
+    v=[float(doc['fields'][k]['doubleValue']) for k in doc['fields'].keys()]
+    return v
+
+def update_db(data, context):
+    db = firestore.Client()
+    stats = get_stats(get_data(data))
+    docname = context.resource.split('/')[-1]
+    db.collection('temperature_stats').document(docname).set(stats)

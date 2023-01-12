@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">FlaskApp</a>
+        <a href="#">About</a>
+    </nav>
+    <hr>
+    <div class="content">
+        <tr>
+            {% for type in labels %}
+                <td><h5>{{type}}</h5></td>
+                {% for label in labels[type] %}
+                    {% if label['quantity'] > 0 %}
+                        <td>{{label['label']['name']}}. Prezzo: {{label['label']['price']}}. Qta: {{label['quantity']}}</td>
+                    {% else %}
+                        <td bgcolor="grey">{{label['label']['name']}}. Prezzo: {{label['label']['price']}}. Qta: {{label['quantity']}}</td>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </tr>
+    </div>
+</body>
+</html>

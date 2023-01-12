@@ -1,0 +1,7 @@
+flask
+google-cloud-firestore
+gunicorn
+requests
+wtforms
+flask_restful
+google-cloud-pubsub

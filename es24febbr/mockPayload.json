@@ -1,0 +1,12 @@
+{
+    "NewSlot": {
+        "label": {
+            "name": "Rote",
+            "type": "red",
+            "year": 1937,
+            "price": 54
+        },
+        "quantity": 0,
+        "minimum": 5
+    }
+}

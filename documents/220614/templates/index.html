@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">FlaskApp</a>
+        <a href="#">About</a>
+    </nav>
+    <hr>
+    <div>
+        <form method="POST">
+            <table>
+                <tr><td>{{form.make.label}}</td><td>{{form.make}}</td></tr>
+                <tr><td>{{form.cc.label}}</td><td>{{form.cc}}</td></tr>
+                <tr><td>{{form.price.label}}</td><td>{{form.price}}</td></tr>
+                <tr><td>{{form.used.label}}</td><td>{{form.used}}</td></tr>
+                <tr><td></td><td>{{form.submit}}</td></tr>
+            </table>
+        </form>
+    </div>
+    <div class="content">
+        <p>Cars:</p>
+        <tr>
+            {% for car in cars %}
+                <td>{{car}}</td>
+            {% endfor %}
+        </tr>
+    </div>
+</body>
+</html>
