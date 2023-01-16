@@ -6,11 +6,10 @@
 # fi
 
 # curl  -H "Content-Type: application/json" -d "$(cat mockPayload.json)" http://localhost:8080/api/v1/slot/2
-source ./env/bin/activate
+# source ./env/bin/activate
 # gcloud app deploy
 
-PROJECT_ID="es13marzosm"
-export AA="casca"
+PROJECT_ID="es14giugnosm"
 export PROJECT_ID=$PROJECT_ID
 gcloud projects create ${PROJECT_ID} --set-as-default
 gcloud app create --project=$PROJECT_ID --region=europe-west3
@@ -32,4 +31,4 @@ handlers:
 source ./create_user.sh
 
 # Pub/Sub
-export TOPICMOCK="cpu_temperature"
+export TOPICMOCK="tt"

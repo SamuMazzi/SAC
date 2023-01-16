@@ -9,7 +9,7 @@
 source ./env/bin/activate
 # . env/bin/activate on Mac
 
-PROJECT_ID="esameSACsm"
+PROJECT_ID="es220224sm"
 export PROJECT_ID=$PROJECT_ID
 gcloud projects create ${PROJECT_ID} --set-as-default
 gcloud app create --project=$PROJECT_ID --region=europe-west3
@@ -38,4 +38,12 @@ handlers:
 source ./create_user.sh
 
 # Pub/Sub
-export TOPIC="cpu_temperature"
+export TOPIC_IRR="irrigazione"
+export SUB_IRR="irrigazione"
+export TOPIC_UMI="umidita"
+export SUB_UMI="umidita"
+
+gcloud pubsub topics create ${TOPIC_IRR}
+gcloud pubsub subscriptions create ${SUB_IRR} --topic ${TOPIC_IRR}
+gcloud pubsub topics create ${TOPIC_UMI}
+gcloud pubsub subscriptions create ${SUB_UMI} --topic ${TOPIC_UMI}

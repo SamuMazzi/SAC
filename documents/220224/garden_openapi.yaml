@@ -56,6 +56,25 @@ paths:
             $ref: "#/definitions/PlantedInfo"
         404:
           description: "Generic error."
+  /garden/plant/{plant}:
+    parameters:
+      - name: plant
+        in: path
+        required: true
+        description: "Name of the plant"
+        type: string
+        minimum: 3
+        maximum: 20
+    get:
+      description: "Get infos of the plant"
+      operationId: "GetPlant"
+      responses:
+        200:
+          description: "Return the Plant Infos"
+          schema:
+            $ref: "#/definitions/PlantDetails"
+        404:
+          description: "Generic error."
 
 definitions:
   PlantedInfo:

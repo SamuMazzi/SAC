@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esame SAC - Samuele Mazzi</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <tr>
+            {% for plant in plants_semina['past'] %}
+                <td bgcolor="grey">{{plants_info[plant['name']]}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for plant in plants_semina['prox'] %}
+                <td bgcolor="blue">{{plants_info[plant['name']]}}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for plant in plants_semina['far'] %}
+                <td bgcolor="green">{{plants_info[plant['name']]}}</td>
+            {% endfor %}
+        </tr>
+    </div>
+</body>
+</html>

@@ -12,6 +12,39 @@ schemes:
   - https
 
 paths:
+  /teams/{name}:
+    parameters:
+      - name: name
+        in: path
+        required: true
+        description: "name of team"
+        type: string
+        minimum: 5
+        maximum: 64
+    post:
+      description: "Create a new league"
+      operationId: "PostLeague"
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: TeamInfo
+          required: True
+          description: "Details the team"
+          schema:
+            $ref: "#/definitions/TeamInfo"
+      responses:
+        200:
+          description: "Success modified."
+          schema:
+            $ref: '#/definitions/LeagueDetail'
+        201:
+          description: "Success created."
+          schema:
+            $ref: '#/definitions/LeagueDetail'
+        400:
+          description: "Generic error."
+
   /league/{name}:
     parameters:
       - name: name
@@ -54,6 +87,46 @@ paths:
           description: "Generic error."
 
 definitions:
+  TeamInfo:
+    type: object
+    properties:
+      members:
+        type: array
+        minimum: 8
+        maximum: 12
+        items:
+          type: object
+          properties: 
+            ruolo:
+              type: string
+              enum: ['portiere', 'volante']
+            name: 
+              type: string
+            captain:
+              type: boolean
+          required:
+            - ruolo
+            - name
+    example: 
+      members:
+        - name: "Mario"
+          ruolo: 'portiere'
+          captain: false
+        - name: "Mario"
+          ruolo: 'portiere'
+          captain: false
+        - name: "Mario"
+          ruolo: 'portiere'
+          captain: false
+        - name: "Mario"
+          ruolo: 'portiere'
+          captain: false
+        - name: "Mario"
+          ruolo: 'portiere'
+          captain: false
+        - name: "Mario"
+          ruolo: 'portiere'
+          captain: false
   LeagueInfo:
     type: object
     properties:

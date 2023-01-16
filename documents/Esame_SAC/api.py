@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-from api import check_obj
-from api import delete_collection
+from validators import check_obj
+from utilities import delete_collection
 from flask import Flask, request
 from google.cloud import firestore
 from flask_restful import Resource, Api

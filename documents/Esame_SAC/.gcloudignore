@@ -3,5 +3,5 @@
 .gitignore
 __pycache__/
 env/
-/setup.cfg
+pubsub/
 credentials.json

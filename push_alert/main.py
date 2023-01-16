@@ -19,7 +19,7 @@ def save_to_db(data):
 
 @app.route('/pubsub/push', methods=['POST'])
 def pubsub_push():
-    if requests.args.get('token', '') != app.config['PUBSUB_VERIFICATION_TOKEN']:
+    if request.args.get('token', '') != app.config['PUBSUB_VERIFICATION_TOKEN']:
         return 'Invalid request', 403
     envelope=json.loads(request.data.decode('utf-8'))
     base64_msg=base64.b64decode(envelope['message']['data'])

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+</head>
+<body>
+    <hr>
+    <div class="content">
+        <p>League!</p>
+        League info group A:
+        <ul>
+            {% for l in league_info['group_a'] %}
+                <li>
+                    {{l}}
+                </li>
+            {% endfor %}
+        </ul>
+        League info group B:
+        <ul>
+            {% for l in league_info['group_b'] %}
+                <li>
+                    {{l}}
+                </li>
+            {% endfor %}
+        </ul>
+        League info finals:
+        <ul>
+            {% for l in league_info['finals'] %}
+                <li>
+                    {{l}}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
