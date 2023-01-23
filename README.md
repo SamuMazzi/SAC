@@ -59,7 +59,11 @@ gcloud pubsub subscriptions create ${SUBSCRIPTION_NAME} --topic ${TOPIC} --push-
 # Trigger events
 def myFunction(event_data, context)
 
-gcloud functions deploy name_fn --runtime=python39 --trigger-event="providers/cloud.firestore/eventTypes/document.write" --trigger-resource="projects/${PROJECT_ID}/databases/(default)/documents/cars/{car}"
+stringValue
+integerValue
+doubleValue
+esame20230116sm
+gcloud functions deploy name_fn --runtime=python39 --trigger-event="providers/cloud.firestore/eventTypes/document.create" --trigger-resource="projects/${PROJECT_ID}/databases/(default)/documents/cars/{car}"
 
 # Test
 gcloud functions call ${FUNCTION_NAME} --data '{"name": "Boba"}'

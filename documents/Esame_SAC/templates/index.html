@@ -3,32 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Esame SAC - Samuele Mazzi</title>
-    <style>
-        nav a {
-            color: #d64161;
-            font-size: 3em;
-            margin-left: 50px;
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
     <div>
-        <input aria-describedby="inputGroup-sizing-lg" aria-label="Sizing example input" class="form-control" id="1Input"
-         onkeyup="countryFunction()" placeholder="Filtra per marca" type="text">
-        <input aria-describedby="inputGroup-sizing-lg" aria-label="Sizing example input" class="form-control" id="2Input"
-         onkeyup="countryFunction()" placeholder="Filtra per potenza" type="text">
-        <input aria-describedby="inputGroup-sizing-lg" aria-label="Sizing example input" class="form-control" id="3Input"
-         onkeyup="countryFunction()" placeholder="Filtra per prezzo" type="number">
-        <input aria-describedby="inputGroup-sizing-lg" aria-label="Sizing example input" class="form-control" id="4Input"
-         onkeyup="countryFunction()" placeholder="Filtra per usato" type="text">
-    </div>
-    <div class="content">
-        <tr>
-            {% for car in cars %}
-                <td>{{car}}</td>
+        Ultime bollette
+        <ul>
+            {% for boll in bollette %}
+                <li>
+                    <a href="/details/{{boll}}">
+                        {{boll}}
+                    </a>
+                </li>
             {% endfor %}
-        </tr>
+        </ul>
     </div>
 </body>
 </html>

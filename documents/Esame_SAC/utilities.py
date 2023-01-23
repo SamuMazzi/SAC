@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 def delete_collection(coll_ref):
     batch_size = 10
     docs = coll_ref.list_documents(page_size=batch_size)
@@ -10,3 +13,10 @@ def delete_collection(coll_ref):
 
     if deleted >= batch_size:
         return delete_collection(coll_ref)
+
+def date_from_str(d):
+    try: return datetime.strptime(d, '%d-%m-%Y')
+    except: return None
+
+def str_from_date(d):
+    return d.strftime('%d-%m-%Y')

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esame SAC - Samuele Mazzi</title>
+    <style>
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Ultima bolletta
+        <ul>
+            {% for key in bolletta %}
+                <li>
+                    <strong>{{key}}:</strong> {{bolletta[key]}}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
